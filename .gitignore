@@ -11,3 +11,11 @@
 *.lai
 *.la
 *.a
+
+#visual studios
+Debug
+Release
+ipch
+*.sdf
+*.vcxproj.user
+*.vcxproj.filters
