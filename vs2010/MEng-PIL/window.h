@@ -4,9 +4,7 @@
 #include <Windows.h>
 #endif
 
-#ifdef _WIN32
-static LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-#endif
+
 
 namespace MEng{
 	class Window{
@@ -16,15 +14,24 @@ namespace MEng{
 		void setDimensions(int width, int height);
 		void setFullscreen(bool fullscreen);
 		bool create();
+		void show();
+		void showCursor(bool show);
+		void pollEvents();
+		bool shouldQuit();
+		
 	private:
-		int m_width;
-		int m_height;
+		void changeFullscreen(bool full);
+		unsigned long m_width;
+		unsigned long m_height;
 		bool m_fullscreen;
+		bool m_quit;
 		#ifdef _WIN32
 		HWND m_handle;
 		HINSTANCE m_hinstance;
 		LPCWSTR m_appname;
 		#endif
 	};
-
+	#ifdef _WIN32
+	LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
+	#endif
 }

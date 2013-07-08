@@ -7,7 +7,7 @@ namespace MEng{
 		GUI();
 		~GUI();
 		static void showMessageBox(const char *message, const char *title);
-		Window createWindow(int width, int height);
+		static Window createWindow(int width, int height, bool fullscreen);
 	private:
 	};
 }
