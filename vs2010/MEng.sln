@@ -2,8 +2,18 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MEng", "MEng\MEng.vcxproj", "{24404B36-25CC-4B42-8D97-FC1A00AF8210}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DFDE4809-0C89-4785-A4EF-FB076AD1FF9E} = {DFDE4809-0C89-4785-A4EF-FB076AD1FF9E}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MEng-PIL", "MEng-PIL\MEng-PIL.vcxproj", "{1989B1F6-AD29-4A64-830C-91F26A5F1803}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MEng-Core", "MEng-Core\MEng-Core.vcxproj", "{DFDE4809-0C89-4785-A4EF-FB076AD1FF9E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1989B1F6-AD29-4A64-830C-91F26A5F1803} = {1989B1F6-AD29-4A64-830C-91F26A5F1803}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MEng-Resources", "MEng-Resources\MEng-Resources.vcxproj", "{E3DF00B8-4457-411D-9196-32894C578F72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +29,14 @@ Global
 		{1989B1F6-AD29-4A64-830C-91F26A5F1803}.Debug|Win32.Build.0 = Debug|Win32
 		{1989B1F6-AD29-4A64-830C-91F26A5F1803}.Release|Win32.ActiveCfg = Release|Win32
 		{1989B1F6-AD29-4A64-830C-91F26A5F1803}.Release|Win32.Build.0 = Release|Win32
+		{DFDE4809-0C89-4785-A4EF-FB076AD1FF9E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DFDE4809-0C89-4785-A4EF-FB076AD1FF9E}.Debug|Win32.Build.0 = Debug|Win32
+		{DFDE4809-0C89-4785-A4EF-FB076AD1FF9E}.Release|Win32.ActiveCfg = Release|Win32
+		{DFDE4809-0C89-4785-A4EF-FB076AD1FF9E}.Release|Win32.Build.0 = Release|Win32
+		{E3DF00B8-4457-411D-9196-32894C578F72}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E3DF00B8-4457-411D-9196-32894C578F72}.Debug|Win32.Build.0 = Debug|Win32
+		{E3DF00B8-4457-411D-9196-32894C578F72}.Release|Win32.ActiveCfg = Release|Win32
+		{E3DF00B8-4457-411D-9196-32894C578F72}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

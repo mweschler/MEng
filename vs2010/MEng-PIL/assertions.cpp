@@ -2,11 +2,13 @@
 #include <sstream>
 #include "assertions.h"
 #include "gui.h"
+#include "mstring.h"
 
 void reportAssertion(const char *expression, const char *file, const long line){
-	std::stringstream msgstream;
+	
+	MEng::StringStream msgstream;
 	msgstream <<"ASSERTION FAILURE!"<<std::endl<< "'"<<expression
 		<<"' evaluated false."<<std::endl<<"File: "<<file<<" Line: "<<line;
-	std::string message = msgstream.str();
-	MEng::GUI::showMessageBox(message.c_str(), "Assertion Failure");
+	MEng::String message = msgstream.str();
+	MEng::GUI::showMessageBox(message, TEXT("Assertion Failure"));
 }

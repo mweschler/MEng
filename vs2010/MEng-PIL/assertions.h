@@ -1,4 +1,5 @@
 #pragma once
+#include "mstring.h"
 
 #if ASSERTIONS_ENABLED
 	void reportAssertion(const char *expression, const char *file, const long line);
@@ -11,7 +12,7 @@
 	if(expr) { } \
 	else \
 	{ \
-		reportAssertion(#expr, __FILE__, __LINE__); \
+	reportAssertion(#expr, __FILE__, __LINE__); \
 		debugBreak(); \
 	}
 #else

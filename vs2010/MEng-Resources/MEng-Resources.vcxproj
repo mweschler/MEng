@@ -11,20 +11,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{24404B36-25CC-4B42-8D97-FC1A00AF8210}</ProjectGuid>
-    <RootNamespace>MEng</RootNamespace>
+    <ProjectGuid>{E3DF00B8-4457-411D-9196-32894C578F72}</ProjectGuid>
+    <RootNamespace>MEngResources</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -41,12 +41,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)\MEng-Resources\;$(SolutionDir)\MEng-Core\;..\MEng-PIL;%(AdditionalIncludeDirectories);$(SolutionDir)\..\3rdparty\glew-1.10.0\include</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>ASSERTIONS_ENABLED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\MEng-Core;$(SolutionDir)\MEng-PIL;$(SolutionDir)\..\3rdparty\glew-1.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)\MEng-Core\;$(SolutionDir)\MEng-PIL\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -54,24 +56,17 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>ASSERTIONS_ENABLED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\MEng-Resources\;$(SolutionDir)\MEng-Core\;C:\Users\Livergel\Documents\Portfolio\MEng\vs2010\MEng\MEng-PIL;%(AdditionalIncludeDirectories);$(SolutionDir)\..\3rdparty\glew-1.10.0\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\MEng-Core;$(SolutionDir)\MEng-PIL;$(SolutionDir)\..\3rdparty\glew-1.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)\MEng-Core\;$(SolutionDir)\MEng-PIL\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="MEng.cpp" />
-    <ClCompile Include="MGame.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="core.h" />
-    <ClInclude Include="MGame.h" />
-    <ClInclude Include="resource.h" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MEng-Core\MEng-Core.vcxproj">
       <Project>{dfde4809-0c89-4785-a4ef-fb076ad1ff9e}</Project>
@@ -79,9 +74,16 @@
     <ProjectReference Include="..\MEng-PIL\MEng-PIL.vcxproj">
       <Project>{1989b1f6-ad29-4a64-830c-91f26a5f1803}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\MEng-Resources\MEng-Resources.vcxproj">
-      <Project>{e3df00b8-4457-411d-9196-32894c578f72}</Project>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="material.h" />
+    <ClInclude Include="shader.h" />
+    <ClInclude Include="Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="material.cpp" />
+    <ClCompile Include="shader.cpp" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
